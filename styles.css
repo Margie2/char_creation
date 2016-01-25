@@ -1,0 +1,139 @@
+@CHARSET "ISO-8859-1";
+body {
+/*background-image: url("images/foundpaper.jpg");*/
+background-image: url("images/escheresque_ste.png");
+
+color: #fff;
+}
+header {
+	margin-left:100px;
+	padding:2px;
+	color: black;
+	height: 100px;
+	margin-bottom: 5px;
+	
+}
+header h1 {
+	/*line-height:15px;*/
+	font-size:30px;
+}
+header h2 {
+	font-size:17px;
+}
+section {
+	/*background-color: #f0eceb;*/
+	
+	margin: 10px;
+	margin-right:0px;
+	
+}
+	
+.left {
+	border-radius:10px;
+	}
+	
+.right {
+	background: #222;
+	right: 0;
+	width: 30%;
+	border-radius:5px;
+	margin-bottom: 20px;
+	position: absolute;
+	top: 40px;
+}
+
+
+
+
+/***************Pages********************/
+.left {
+	/*margin: 0 42% 6% 3%;*/
+	margin-left: 2%;
+	background-image: url("images/paper_texture.svg");
+	background-repeat:repeat-x;
+	height: 90%;
+	width: 60%;
+	min-height: 600px;
+	
+	}
+	
+	#pageButtons button{
+	border:none;
+	background-repeat:no-repeat;
+	background-color:transparent;
+	height:50px;
+	width:50px;
+	position:absolute;
+	top:80%;
+	}
+	#pageButtons #Next{
+	
+	background-image: url("images/icons/right127.svg");
+	/*float:right;*/
+	left:52%;
+	
+	}
+	#pageButtons #Previous{
+	
+	/*float:left;*/
+	background-image: url("images/icons/back28.svg");
+	left:7%;
+	}
+	/**PageContent**/
+			.content {	
+		    line-height: 31px;
+			
+			margin: 2%;
+			margin-top:1%;
+			margin-left:15%;
+			padding: 1%;
+			color:black;
+		}
+	#sets {
+	display: inline-block;
+	
+	}
+	#task {
+		float:left;
+		display: inline-block;
+		position:absolute;
+		margin: 40px 100px 40px 50px;
+		width: 100px;
+	}
+	
+	#abilityRollSums {
+	margin: 30px 100px 40px 250px;
+		display:inline-block;
+		position:absolute;
+		float:right;
+	}
+	#rollButton {
+		display: inline-block;
+	}
+	#abilityRollSums2 {
+	 width: 100%;	
+	}
+	#abilityRollSums2 table, th, td {
+	border:black solid 3px;
+	border-collapse:collapse;
+	padding: 5px;
+	}
+	#abilityRollSums2 td {
+		height: 20px;
+		width: 60px;	
+	}
+	/***End****/
+
+
+/*******************End Pages******************/	
+	
+/******FONTS******/
+@font-face {
+    font-family: Splendid;
+    src: url("fonts/SplendidN.ttf");
+}
+
+body {
+    font-family: Splendid;
+}
+
