@@ -43,27 +43,29 @@ function setAbilityRolls(){
 function chooseAbilities() {
 	alert("entered choose");
 	var rows = document.getElementsByClassName("abilityRow");
+
 	alert("obtained rows element");
 	
 	
 	for(var index = 0; index < rows.length; index++){
 		
 		alert("entered rows for");
-		/*var cells = rows[index].getElementsByName("absum_"  + (index + 1) + "_choice");*/
+var fieldset = rows.getElementById("scoreChoice" +  (index + 1) );
+		/*var cells = rows[index].getElementsByName("absum_"  + (index + 1) + "_choice");
 		var cells;
-		cells = rows[index].getElementsByTagName("input");
-		alert("obtained elements");
+	 	cells = rows[index].getElementsByTagName("input");*/
+		alert("obtained fieldset");
 		var abScoreAbility = "";
-		for(var i = 0; i < cells.length; i++){
-			alert("entered cells for");
-			if(cells[i].checked === true){
+		for(var i = 0; i < fieldset.length; i++){
+			alert("entered fieldset for");
+			if(fieldset[i].checked === true){
 				alert("entered checked if");
-				abScoreAbility = cells[i].value;
+				abScoreAbility = fieldset[i].value;
 			}
 			
 		}
-		alert(cells[i].value );
-		alert("exited cells for");
+		alert(fieldset[i].value );
+		alert("exited fieldset for");
 		char_abilityScoresType.push(abScoreAbility);
 		alert("pushed " + char_abilityScoresType[index]);
 		var abilityText = char_abilityScoresType[index] + ": " + char_abilityScores[index] + "<br>";
