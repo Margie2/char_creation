@@ -40,39 +40,48 @@ function setAbilityRolls(){
 	
 }
 
-function chooseAbilities() {
+ function chooseAbilities() {
 	alert("entered choose");
-	var rows = document.getElementsByClassName("abilityRow");
-
-	alert("obtained rows element");
+	var fieldsets = document.getElementsByTagName("fieldset");
+	alert("obtained fieldsets element");
+	var abilityText = "<p>";
 	
 	
-	for(var index = 0; index < rows.length; index++){
+	for(var index = 1; index <= fieldsets.length; index++){
 		
-		alert("entered rows for");
-var fieldset = rows.getElementById("scoreChoice" +  (index + 1) );
-		/*var cells = rows[index].getElementsByName("absum_"  + (index + 1) + "_choice");
-		var cells;
-	 	cells = rows[index].getElementsByTagName("input");*/
-		alert("obtained fieldset");
+		alert("entered fieldsets for ");
+		var cells = document.getElementsByName("absum_choice_" + index);
+		alert("obtained cells " + cells.length);
 		var abScoreAbility = "";
-		for(var i = 0; i < fieldset.length; i++){
-			alert("entered fieldset for");
-			if(fieldset[i].checked === true){
-				alert("entered checked if");
-				abScoreAbility = fieldset[i].value;
+		
+		for(var i = 0; i <= cells.length; i++){
+			if(cells[i].checked){
+				alert("entered checked if" + cells[i].value);
+				abScoreAbility = cells[i].value;
+				alert("abScoreAbility = " + abScoreAbility);
+				abilityText = pushAbScores(abScoreAbility, abilityText, index);
+				break;
 			}
 			
 		}
-		alert(fieldset[i].value );
-		alert("exited fieldset for");
-		char_abilityScoresType.push(abScoreAbility);
-		alert("pushed " + char_abilityScoresType[index]);
-		var abilityText = char_abilityScoresType[index] + ": " + char_abilityScores[index] + "<br>";
-		    document.getElementById("abilitiesSpan").innerHTML = abilityText;
-			alert("printed to ability span");
+		
 	}
-	alert("exited rows for");
-    
+	alert("exited fieldsets for");
+	abilityText += "</p>";
+    displayAbilityText(abilityText);
 
+}
+function pushAbScores(abScoreAbility, abilityText, index){
+alert(abScoreAbility );
+		char_abilityScoresType.push(abScoreAbility);
+		alert("pushed " + char_abilityScoresType[index - 1]);
+		abilityText += (char_abilityScoresType[index - 1] + " : " + char_abilityScores[index -1] + "<br>");
+		alert(abilityText);
+		return abilityText;
+		   	
+}
+function displayAbilityText(abilityText){
+	alert(abilityText);
+	 document.getElementById("abilitiesSpan").innerHTML = abilityText;
+			alert("printed to ability span");
 }

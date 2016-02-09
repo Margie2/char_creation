@@ -1,180 +1,228 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="ISO-8859-1">
-		<title>Character Creation</title>
-		<link rel="stylesheet" type="text/css" href="styles.css">
-		<script src="run.js"></script>
-		
-		<script src="character.js"></script>
-		
-		<script src="rollAbilities.js"></script>
-	</head>
-	<body>
-	<section>
-	<div class="left">
-		<header>
-			<h2>Dungeons &amp; Dragons 3.5</h2>
-			<h1>Character Creation</h1>
-		</header>
-		<div id="pages">
-		<div class="page" id="page1">
-			<div class="content">
-			
-			<h3>Choose your race</h3>
-			<div id="races">
-			<form id="raceChoice" action="character.js">
-			
-				<input type="radio" name="race" value="Dwarf" checked>Dwarf
-				<br>
-				<input type="radio" name="race" value="Elf">Elf
-				<br>
-				<input type="radio" name="race" value="Gnome">Gnome
-				<br>
-				<input type="radio" name="race" value="Halfling">Halfling
-				<br>
-				<input type="radio" name="race" value="Half-Elf">Half-Elf
-				<br>
-				<input type="radio" name="race" value="Half-Orc">Half-Orc
-				<br>
-				<input type="radio" name="race" value="Human">Human
-				<br>
-				<input type="button" onclick="chooseRace()" value="Enter">
-			</form>
-			</div>
-			</div>
-						
-		</div>
-		<div class="page" id="page2" style="display:none;">
-			<div class="content">
-		<h3>Choose your class</h3>
-			<div id="classes">
-			<form id="classChoice" action="character.js">
-				
-				<input type="radio" name="class" value="Barbarian" checked>Barbarian
-				<br>
-				<input type="radio" name="class" value="Bard">Bard
-				<br>
-				<input type="radio" name="class" value="Cleric">Cleric
-				<br>
-				<input type="radio" name="class" value="Druid">Druid
-				<br>
-				<input type="radio" name="class" value="Fighter">Fighter
-				<br>
-				<input type="radio" name="class" value="Monk">Monk
-				<br>
-				<input type="radio" name="class" value="Paladin">Paladin
-				<br>
-				<input type="radio" name="class" value="Ranger">Ranger
-				<br>
-				<input type="radio" name="class" value="Rogue">Rogue
-				<br>
-				<input type="radio" name="class" value="Sorcerer">Sorcerer
-				<br>
-				<input type="radio" name="class" value="Wizard">Wizard
-				<br>
-				<input type="button" onclick="chooseClass()" value="Enter">
-			</form>
-			</div>
-			</div>
-		</div>
-		<div class="page" id="page3" style="display:none;">
-			<div class="content">
-			<h3>Roll your character's ability scores</h3>
-			
-			<input id="numOfSides" hidden ="hidden" value="6">
-			<input id="numOfRolls" hidden = "hidden" value = "4">
-			<input id="numOfRollSets" hidden = "hidden" value = "6">
-			
-			
-			<div id="sets">
-			<button id = "rollButton" >
-				Roll Dice
-			</button>
-				<div id="set1">Set 1</div>
-
-				<div id="set2">Set 2</div>
-
-				<div id="set3">Set 3</div>
-
-				<div id="set4">Set 4</div>
-
-				<div id="set5">Set 5</div>
-
-				<div id="set6">Set 6</div>
-			</div>
-			<p id="task">Discard lowest die and add together remaining dice</p>
-			<div id="abilityRollSums">
-				<div class="absum" id="absum1"> </div>
-				<div class="absum" id="absum2"> </div>
-				<div class="absum" id="absum3"> </div>
-				<div class="absum" id="absum4"> </div>
-				<div class="absum" id="absum5"> </div>
-				<div class="absum" id="absum6"> </div>
-			</div>
-			</div>
-		</div>
-		<div class="page" id="page4" style="display:none;">
-			<div class="content">
-			<h3>Allocate your scores to the ability types</h3>
-			<form>
+<head>
+<meta charset="ISO-8859-1">
+<title>Character Creation</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<script src="run.js"></script>
+<script src="character.js"></script>
+<script src="rollAbilities.js"></script>
+</head>
+<body>
+<section>
+  <div class="left">
+    <header>
+      <h2>Dungeons &amp; Dragons 3.5</h2>
+      <h1>Character Creation</h1>
+    </header>
+    <div id="pages">
+      <div class="page" id="page1">
+        <div class="content">
+          <h3>Choose your race</h3>
+          <div id="races">
+            <form id="raceChoice" action="character.js">
+              <input type="radio" name="race" value="Dwarf" checked>
+              Dwarf <br>
+              <input type="radio" name="race" value="Elf">
+              Elf <br>
+              <input type="radio" name="race" value="Gnome">
+              Gnome <br>
+              <input type="radio" name="race" value="Halfling">
+              Halfling <br>
+              <input type="radio" name="race" value="Half-Elf">
+              Half-Elf <br>
+              <input type="radio" name="race" value="Half-Orc">
+              Half-Orc <br>
+              <input type="radio" name="race" value="Human">
+              Human <br>
+              <input type="button" onclick="chooseRace()" value="Enter">
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="page" id="page2" style="display:none;">
+        <div class="content">
+          <h3>Choose your class</h3>
+          <div id="classes">
+            <form id="classChoice" action="character.js">
+              <input type="radio" name="class" value="Barbarian" checked>
+              Barbarian <br>
+              <input type="radio" name="class" value="Bard">
+              Bard <br>
+              <input type="radio" name="class" value="Cleric">
+              Cleric <br>
+              <input type="radio" name="class" value="Druid">
+              Druid <br>
+              <input type="radio" name="class" value="Fighter">
+              Fighter <br>
+              <input type="radio" name="class" value="Monk">
+              Monk <br>
+              <input type="radio" name="class" value="Paladin">
+              Paladin <br>
+              <input type="radio" name="class" value="Ranger">
+              Ranger <br>
+              <input type="radio" name="class" value="Rogue">
+              Rogue <br>
+              <input type="radio" name="class" value="Sorcerer">
+              Sorcerer <br>
+              <input type="radio" name="class" value="Wizard">
+              Wizard <br>
+              <input type="button" onclick="chooseClass()" value="Enter">
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="page" id="page3" style="display:none;">
+        <div class="content">
+          <h3>Roll your character's ability scores</h3>
+          <input id="numOfSides" hidden ="hidden" value="6">
+          <input id="numOfRolls" hidden = "hidden" value = "4">
+          <input id="numOfRollSets" hidden = "hidden" value = "6">
+          <div id="sets">
+            <button id = "rollButton" > Roll Dice </button>
+            <div id="set1">Set 1</div>
+            <div id="set2">Set 2</div>
+            <div id="set3">Set 3</div>
+            <div id="set4">Set 4</div>
+            <div id="set5">Set 5</div>
+            <div id="set6">Set 6</div>
+          </div>
+          <p id="task">Discard lowest die and add together remaining dice</p>
+          <div id="abilityRollSums">
+            <div class="absum" id="absum1"> </div>
+            <div class="absum" id="absum2"> </div>
+            <div class="absum" id="absum3"> </div>
+            <div class="absum" id="absum4"> </div>
+            <div class="absum" id="absum5"> </div>
+            <div class="absum" id="absum6"> </div>
+          </div>
+        </div>
+      </div>
+      <div class="page" id="page4" style="display:none;">
+        <div class="content">
+          <h3>Allocate your scores to the ability types</h3>
+          <form action="character.js">
             <div id="abilityRollSums2">
-			<table >
-			<tbody>
-			<tr>
-			<td> </td><td>Strength</td><td>Dexterity</td><td>Constitution</td><td>Intelligence</td><td>Wisdom</td><td>Charisma</td>
-			</tr>
-			<tr><div class="abilityRow"><fieldset id="scoreChoice1">
-				<td class="absum" id="absum_1"> </td><td><input type="radio" name="absum_choice_1" value="Strength" checked></td><td><input type="radio" name="absum_choice_1" value="Dexterity"> </td><td><input type="radio" name="absum_choice_1" value="Constitiution"> </td><td> <input type="radio" name="absum_choice_1" value="Intelligence"></td><td><input type="radio" name="absum_choice_1" value="Wisdom"> </td><td><input type="radio" name="absum_choice_1" value="Charisma"> </td>
-			</fieldset></div></tr>
-			<tr><div class="abilityRow"><fieldset id="scoreChoice2">
-				<td class="absum" id="absum_2"> </td><td><input type="radio" name="absum_choice_2" value="Strength" checked></td><td><input type="radio" name="absum_choice_2" value="Dexterity"> </td><td><input type="radio" name="absum_choice_2" value="Constitiution"> </td><td> <input type="radio" name="absum_choice_2" value="Intelligence"> </td><td><input type="radio" name="absum_choice_2" value="Wisdom"> </td><td><input type="radio" name="absum_choice_2" value="Charisma"> </td>
-			</fieldset></div></tr>
-			<tr><div class="abilityRow"><fieldset id="scoreChoice3">
-				<td class="absum" id="absum_3"> </td> <td> <input type="radio" name="absum_choice_3" value="Strength" checked></td><td><input type="radio" name="absum_choice_3" value="Dexterity"> </td><td><input type="radio" name="absum_choice_3" value="Constitiution"> </td><td> <input type="radio" name="absum_choice_3" value="Intelligence"></td><td><input type="radio" name="absum_choice_3" value="Wisdom"> </td><td><input type="radio" name="absum_choice_3" value="Charisma"> </td>
-			</fieldset></div></tr>
-			<tr><div class="abilityRow"><fieldset id="scoreChoice4">
-				<td class="absum" id="absum_4"> </td> <td> <input type="radio" name="absum_choice_4" value="Strength" checked></td><td><input type="radio" name="absum_choice_4" value="Dexterity"> </td><td><input type="radio" name="absum_choice_4" value="Constitiution"> </td><td> <input type="radio" name="absum_choice_4" value="Intelligence"></td><td><input type="radio" name="absum_choice_4" value="Wisdom"> </td><td><input type="radio" name="absum_4_choice" value="Charisma"> </td>
-			</fieldset></div></tr>
-			<tr><div class="abilityRow"><fieldset id="scoreChoice5">
-				<td class="absum" id="absum_5"> </td> <td><input type="radio" name="absum_5_choice" value="Strength" checked></td><td><input type="radio" name="absum_5_choice" value="Dexterity"> </td><td><input type="radio" name="absum_5_choice" value="Constitiution"></td><td> <input type="radio" name="absum_5_choice" value="Intelligence"></td><td><input type="radio" name="absum_5_choice" value="Wisdom"> </td><td><input type="radio" name="absum_5_choice" value="Charisma"> </td>
-			</fieldset></div></tr>
-			<tr><div class="abilityRow"><fieldset id="scoreChoice6">
-				<td class="absum" id="absum_6"> </td> <td> <input type="radio" name="absum_6_choice" value="Strength" checked></td><td><input type="radio" name="absum_6_choice" value="Dexterity"> </td><td> <input type="radio" name="absum_6_choice" value="Constitiution"></td><td> <input type="radio" name="absum_6_choice" value="Intelligence"></td><td><input type="radio" name="absum_6_choice" value="Wisdom"> </td><td> <input type="radio" name="absum_6_choice" value="Charisma"></td>
-			</fieldset></div></tr>
-				</tbody>
-				</table>
-                <input type="button" onclick="chooseAbilities()" value="Enter">
-                </div> <!--End abilityRollSums2 -->
-                
-			</form>
+              <table >
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td>Strength</td>
+                    <td>Dexterity</td>
+                    <td>Constitution</td>
+                    <td>Intelligence</td>
+                    <td>Wisdom</td>
+                    <td>Charisma</td>
+                  </tr>
+                  <tr>
+                    <div class="abilityRow">
+                      <fieldset id="scoreChoice1" class="scoreChoice">
+                        <td class="absum" id="absum_1"></td>
+                        <td><input type="radio" name="absum_choice_1" value="Strength" checked></td>
+                        <td><input type="radio" name="absum_choice_1" value="Dexterity"></td>
+                        <td><input type="radio" name="absum_choice_1" value="Constitiution"></td>
+                        <td><input type="radio" name="absum_choice_1" value="Intelligence"></td>
+                        <td><input type="radio" name="absum_choice_1" value="Wisdom"></td>
+                        <td><input type="radio" name="absum_choice_1" value="Charisma"></td>
+                      </fieldset>
+                    </div>
+                  </tr>
+                  <tr>
+                    <div class="abilityRow">
+                      <fieldset id="scoreChoice2" class="scoreChoice">
+                        <td class="absum" id="absum_2"></td>
+                        <td><input type="radio" name="absum_choice_2" value="Strength" checked></td>
+                        <td><input type="radio" name="absum_choice_2" value="Dexterity"></td>
+                        <td><input type="radio" name="absum_choice_2" value="Constitiution"></td>
+                        <td><input type="radio" name="absum_choice_2" value="Intelligence"></td>
+                        <td><input type="radio" name="absum_choice_2" value="Wisdom"></td>
+                        <td><input type="radio" name="absum_choice_2" value="Charisma"></td>
+                      </fieldset>
+                    </div>
+                  </tr>
+                  <tr>
+                    <div class="abilityRow">
+                      <fieldset id="scoreChoice3" class="scoreChoice">
+                        <td class="absum" id="absum_3"></td>
+                        <td><input type="radio" name="absum_choice_3" value="Strength" checked></td>
+                        <td><input type="radio" name="absum_choice_3" value="Dexterity"></td>
+                        <td><input type="radio" name="absum_choice_3" value="Constitiution"></td>
+                        <td><input type="radio" name="absum_choice_3" value="Intelligence"></td>
+                        <td><input type="radio" name="absum_choice_3" value="Wisdom"></td>
+                        <td><input type="radio" name="absum_choice_3" value="Charisma"></td>
+                      </fieldset>
+                    </div>
+                  </tr>
+                  <tr>
+                    <div class="abilityRow">
+                      <fieldset id="scoreChoice4" class="scoreChoice">
+                        <td class="absum" id="absum_4"></td>
+                        <td><input type="radio" name="absum_choice_4" value="Strength" checked></td>
+                        <td><input type="radio" name="absum_choice_4" value="Dexterity"></td>
+                        <td><input type="radio" name="absum_choice_4" value="Constitiution"></td>
+                        <td><input type="radio" name="absum_choice_4" value="Intelligence"></td>
+                        <td><input type="radio" name="absum_choice_4" value="Wisdom"></td>
+                        <td><input type="radio" name="absum_choice_4" value="Charisma"></td>
+                      </fieldset>
+                    </div>
+                  </tr>
+                  <tr>
+                    <div class="abilityRow">
+                      <fieldset id="scoreChoice5" class="scoreChoice">
+                        <td class="absum" id="absum_5"></td>
+                        <td><input type="radio" name="absum_choice_5" value="Strength" checked></td>
+                        <td><input type="radio" name="absum_choice_5" value="Dexterity"></td>
+                        <td><input type="radio" name="absum_choice_5" value="Constitiution"></td>
+                        <td><input type="radio" name="absum_choice_5" value="Intelligence"></td>
+                        <td><input type="radio" name="absum_choice_5" value="Wisdom"></td>
+                        <td><input type="radio" name="absum_choice_5" value="Charisma"></td>
+                      </fieldset>
+                    </div>
+                  </tr>
+                  <tr>
+                    <div class="abilityRow">
+                      <fieldset id="scoreChoice6" class="scoreChoice">
+                        <td class="absum" id="absum_6"></td>
+                        <td><input type="radio" name="absum_choice_6" value="Strength" checked></td>
+                        <td><input type="radio" name="absum_choice_6" value="Dexterity"></td>
+                        <td><input type="radio" name="absum_choice_6" value="Constitiution"></td>
+                        <td><input type="radio" name="absum_choice_6" value="Intelligence"></td>
+                        <td><input type="radio" name="absum_choice_6" value="Wisdom"></td>
+                        <td><input type="radio" name="absum_choice_6" value="Charisma"></td>
+                      </fieldset>
+                    </div>
+                  </tr>
+                </tbody>
+              </table>
+              <input type="button" onclick="chooseAbilities()" value="Enter">
+            </div>
+            <!--End abilityRollSums2 -->
             
-			</div> <!--End Content -->
-			
-		</div> <!--End page -->
-		<div id="pageButtons">
-		
-			<button style="display:none;" id="Previous" > </button>
-			<button id="Next"> </button>
-			
-		</div>
-			</div><!--pages-->
-			
-			
-			
-			
-			</div><!--End Left-->
-			
-			<div class="right">
-			<ul>
-			<li>Race: <span id="raceSpan"> </span></li>
-			<li>Class: <span id="classSpan"> </span></li>
-			<li>Abilities: <span id="abilitiesSpan"> </span></li>
-			<li>Weapons</li>
-			<li>Skills</li>
-			</ul>
-			</div>
-	
-		</section>
-	</body>
+          </form>
+        </div>
+        <!--End Content --> 
+        
+      </div>
+      <!--End page -->
+      <div id="pageButtons">
+        <button style="display:none;" id="Previous" > </button>
+        <button id="Next"> </button>
+      </div>
+    </div>
+    <!--pages--> 
+    
+  </div>
+  <!--End Left-->
+  
+  <div class="right">
+    <ul>
+      <li>Race: <span id="raceSpan"> </span></li>
+      <li>Class: <span id="classSpan"> </span></li>
+      <li>Abilities: <span id="abilitiesSpan"> </span></li>
+      <li>Weapons</li>
+      <li>Skills</li>
+    </ul>
+  </div>
+</section>
+</body>
 </html>
