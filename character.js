@@ -3,8 +3,17 @@
  */
 var char_race = "";
 var char_class = "";
-var char_abilityScores = [0,0,0,0,0,0];
+var char_abilityScoresTemp = [];
+var char_abilityScores = {
+    Strength: 0,
+	Dexterity: 0,
+	Constitution: 0,
+	Intelligence: 0,
+	Wisdom: 0,
+	Charisma: 0
+};
 var char_abilityScoresType = [];
+
 
 function chooseRace() {
 	var race_value;
@@ -32,33 +41,26 @@ function setAbilityRolls(){
 	var abilitySumSet = document.getElementById("abilityRollSums");
 	var abilitySumArray = abilitySumSet.getElementsByClassName("absum");
 	for (var i=0; i < abilitySumArray.length; i++){
-		char_abilityScores[i] = abilitySumArray[i].innerHTML;
+		char_abilityScoresTemp[i] = abilitySumArray[i].innerHTML;
 		var sum_Div = document.getElementById("absum_" + (i+1));
-		sum_Div.innerHTML = char_abilityScores[i];
+		sum_Div.innerHTML = char_abilityScoresTemp[i];
 	}
 	
 	
 }
 
  function chooseAbilities() {
-	alert("entered choose");
 	var fieldsets = document.getElementsByTagName("fieldset");
-	alert("obtained fieldsets element");
 	var abilityText = "<p>";
 	
 	
 	for(var index = 1; index <= fieldsets.length; index++){
-		
-		alert("entered fieldsets for ");
 		var cells = document.getElementsByName("absum_choice_" + index);
-		alert("obtained cells " + cells.length);
 		var abScoreAbility = "";
 		
 		for(var i = 0; i <= cells.length; i++){
 			if(cells[i].checked){
-				alert("entered checked if" + cells[i].value);
 				abScoreAbility = cells[i].value;
-				alert("abScoreAbility = " + abScoreAbility);
 				abilityText = pushAbScores(abScoreAbility, abilityText, index);
 				break;
 			}
@@ -66,22 +68,25 @@ function setAbilityRolls(){
 		}
 		
 	}
-	alert("exited fieldsets for");
-	abilityText += "</p>";
+	
+	
+	
     displayAbilityText(abilityText);
 
 }
 function pushAbScores(abScoreAbility, abilityText, index){
-alert(abScoreAbility );
-		char_abilityScoresType.push(abScoreAbility);
-		alert("pushed " + char_abilityScoresType[index - 1]);
-		abilityText += (char_abilityScoresType[index - 1] + " : " + char_abilityScores[index -1] + "<br>");
-		alert(abilityText);
+		char_abilityScores[abScoreAbility] = char_abilityScoresTemp[index - 1];
+		
+
+
 		return abilityText;
 		   	
 }
 function displayAbilityText(abilityText){
-	alert(abilityText);
+	for(var key in char_abilityScores) {
+   var val = char_abilityScores[key];
+   abilityText += (key + " : " + val + "<br>");
+	}
+	abilityText += "</p>";
 	 document.getElementById("abilitiesSpan").innerHTML = abilityText;
-			alert("printed to ability span");
 }

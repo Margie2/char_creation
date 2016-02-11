@@ -124,7 +124,9 @@ section {
 	}
 	fieldset {display:none;}
 	/***End****/
-
+	#abilitiesSpan {
+		padding: 2%;
+	}
 
 /*******************End Pages******************/	
 	
