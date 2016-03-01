@@ -12,28 +12,39 @@
 <section>
   <div class="left">
     <header>
-      <h2>Dungeons &amp; Dragons 3.5</h2>
+      <h2>Tabletop Roleplaying Game</h2>
       <h1>Character Creation</h1>
     </header>
     <div id="pages">
       <div class="page" id="page1">
         <div class="content">
           <h3>Choose your race</h3>
-          <div id="races">
+          <div id="races" class="customRadio">
             <form id="raceChoice" action="character.js">
-              <input type="radio" name="race" value="Dwarf" checked>
+              <input id="dwarf" type="radio" name="race" value="Dwarf" checked>
+            <label for="dwarf"></label>
               Dwarf <br>
-              <input type="radio" name="race" value="Elf">
+              <input id="elf" type="radio" name="race" value="Elf">
+              <label for="elf"></label>
               Elf <br>
-              <input type="radio" name="race" value="Gnome">
+              <input id="gnome" type="radio" name="race" value="Gnome">
+                          <label for="gnome"></label>
               Gnome <br>
-              <input type="radio" name="race" value="Halfling">
+              <input id="halfling" type="radio" name="race" value="Halfling">
+                          <label for="halfling"></label>
+
               Halfling <br>
-              <input type="radio" name="race" value="Half-Elf">
+              <input id="half-elf" type="radio" name="race" value="Half-Elf">
+                          <label for="half-elf"></label>
+
               Half-Elf <br>
-              <input type="radio" name="race" value="Half-Orc">
+              <input id="half-orc" type="radio" name="race" value="Half-Orc">
+                          <label for="half-orc"></label>
+
               Half-Orc <br>
-              <input type="radio" name="race" value="Human">
+              <input id="human" type="radio" name="race" value="Human">
+                          <label for="human"></label>
+
               Human <br>
               <input type="button" onclick="chooseRace()" value="Enter">
             </form>
@@ -43,29 +54,40 @@
       <div class="page" id="page2" style="display:none;">
         <div class="content">
           <h3>Choose your class</h3>
-          <div id="classes">
+          <div id="classes" class="customRadio">
             <form id="classChoice" action="character.js">
-              <input type="radio" name="class" value="Barbarian" checked>
-              Barbarian <br>
-              <input type="radio" name="class" value="Bard">
+              <input  id="barbarian"  type="radio" name="class" value="Barbarian" checked />
+               <label class="radioUnSelected" for="barbarian"></label>
+               Barbarian <br>
+              <input id="bard" type="radio" name="class" value="Bard">
+              <label class="radioUnSelected" for="bard"></label>
               Bard <br>
-              <input type="radio" name="class" value="Cleric">
+              <input id="cleric" type="radio" name="class" value="Cleric">
+              <label class="radioUnSelected" for="cleric"></label>
               Cleric <br>
-              <input type="radio" name="class" value="Druid">
+              <input id="druid" type="radio" name="class" value="Druid">
+              <label class="radioUnSelected" for="druid"></label>
               Druid <br>
-              <input type="radio" name="class" value="Fighter">
+              <input id="fighter" type="radio" name="class" value="Fighter">
+              <label class="radioUnSelected" for="fighter"></label>
               Fighter <br>
-              <input type="radio" name="class" value="Monk">
+              <input id="monk" type="radio" name="class" value="Monk">
+              <label class="radioUnSelected" for="monk"></label>
               Monk <br>
-              <input type="radio" name="class" value="Paladin">
+              <input id="paladin" type="radio" name="class" value="Paladin">
+              <label class="radioUnSelected" for="paladin"></label>
               Paladin <br>
-              <input type="radio" name="class" value="Ranger">
+              <input id="ranger" type="radio" name="class" value="Ranger">
+              <label class="radioUnSelected" for="ranger"></label>
               Ranger <br>
-              <input type="radio" name="class" value="Rogue">
+              <input id="rogue" type="radio" name="class" value="Rogue">
+              <label class="radioUnSelected" for="rogue"></label>
               Rogue <br>
-              <input type="radio" name="class" value="Sorcerer">
+              <input id="sorcerer" type="radio" name="class" value="Sorcerer">
+              <label class="radioUnSelected" for="sorcerer"></label>
               Sorcerer <br>
-              <input type="radio" name="class" value="Wizard">
+              <input id="wizard" type="radio" name="class" value="Wizard">
+              <label class="radioUnSelected" for="wizard"></label>
               Wizard <br>
               <input type="button" onclick="chooseClass()" value="Enter">
             </form>
